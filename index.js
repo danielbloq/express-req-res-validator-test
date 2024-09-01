@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 // request will succeed but the field leak will be removed
 // app.get('/', (req, res) => {
 //     const name = req.query.name || 'World';
-//     res.send({message:`Hello ${name}`, leak: 'leaked info'});
+//     res.send({message:`Hello ${name}`, leak: 'leaked info'}); // not sure yet how to throw an error on leaked field or log it
 // });
 
 // request will fail
