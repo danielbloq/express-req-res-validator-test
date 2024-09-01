@@ -16,16 +16,16 @@ app.use(
 );
 
 // resquest will succeed
-// app.get('/', (req, res) => {
-//     const name = req.query.name || 'World';
-//     res.send({message:`Hello ${name}`});
-// });
-
-// request will succeed but the field leak will be removed
 app.get('/', (req, res) => {
     const name = req.query.name || 'World';
-    res.send({message:`Hello ${name}`, leak: 'leaked info'});
+    res.send({message:`Hello ${name}`});
 });
+
+// request will succeed but the field leak will be removed
+// app.get('/', (req, res) => {
+//     const name = req.query.name || 'World';
+//     res.send({message:`Hello ${name}`, leak: 'leaked info'});
+// });
 
 // request will fail
 // app.get('/', (req, res) => {
